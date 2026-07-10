@@ -68,4 +68,10 @@ describe('reduce', () => {
 
     expect(result).toEqual({ apple: 2, banana: 1 });
   });
+
+  it('throws TypeError on empty array without initial value', () => {
+    const cb = jest.fn();
+
+    expect(() => [].reduce2(cb)).toThrow(TypeError);
+  });
 });
